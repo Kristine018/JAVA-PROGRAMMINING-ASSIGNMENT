@@ -1,0 +1,27 @@
+// This Java program calculates and displays the average of marks entered by a student for five different units. It uses a Scanner to collect the marks from the user, stores them in an array, calculates the total, computes the average, and then prints the average rounded to two decimal places
+
+import java.util.Scanner;
+
+public class StudentMarks {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Declare an array to store the marks for 5 units
+        double[] marks = new double[5];
+        double total = 0.0;
+
+        // Ask the user to enter the marks for each unit
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Enter the marks for unit " + (i + 1) + ": ");
+            marks[i] = scanner.nextDouble();
+            total += marks[i];
+        }
+
+        // Compute the average
+        double average = total / 5;
+
+        // Display the average rounded to 2 decimal places
+        System.out.printf("Your average marks for the five units is: %.2f", average);
+    }
+}
