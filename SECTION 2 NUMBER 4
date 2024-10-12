@@ -1,0 +1,18 @@
+//This Java program displays all multiples of 2, 3, and 7 between 71 and 150 by checking each number in the range for divisibility
+
+public class MultiplesFinder {
+    public static void main(String[] args) {
+        // Define the range of numbers
+        int start = 71;
+        int end = 150;
+
+        // Display multiples of 2, 3, and 7
+        System.out.println("Multiples of 2, 3, and 7 within the range 71 to 150:");
+
+        for (int i = start; i <= end; i++) {
+            if (i % 2 == 0 || i % 3 == 0 || i % 7 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
