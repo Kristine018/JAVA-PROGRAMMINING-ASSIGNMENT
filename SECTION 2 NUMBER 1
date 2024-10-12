@@ -1,0 +1,29 @@
+// Import the Scanner class from the java.util package for taking user input
+import java.util.Scanner;
+
+public class UserInfo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Asks for the surname
+        System.out.print("Enter your surname: ");
+        String surname = scanner.nextLine();
+
+        // Asks for the age
+        System.out.print("Enter your current age: ");
+        int age = scanner.nextInt();
+
+        // Calculates the number of characters in the surname
+        int surnameLength = surname.length();
+
+        // CheckS if the age is even or odd
+        String ageType = (age % 2 == 0) ? "even" : "odd";
+
+        // Prints the results
+        System.out.println("The number of characters is " + surnameLength + ".");
+        System.out.println("Your current age is an " + ageType + " number.");
+
+        // Closes the scanner
+        scanner.close();
+    }
+}
