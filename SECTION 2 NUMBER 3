@@ -4,25 +4,47 @@ import java.util.Scanner;
 
 public class DivisibilityTest {
     public static void main(String[] args) {
-        // Creates a Scanner object for user input
+        // We need a way to read input from the user, so we create a Scanner object.
         Scanner scanner = new Scanner(System.in);
 
-        // Asks the user to enter an integer
+        // Now, let's ask the user to enter an integer for us to check.
         System.out.print("Enter an integer: ");
-        int number = scanner.nextInt();
+        int number = scanner.nextInt();  // We read the integer input and store it in 'number'.
 
         System.out.println("\nChecking divisibility for numbers 1 through 9:");
 
-        // Checks divisibility for numbers 1 through 9
+        // We'll check if the entered number is divisible by any numbers from 1 to 9.
         for (int i = 1; i <= 9; i++) {
+            // We're applying special rules for the number 5.
             if (i == 5) {
-                // Special rule for divisibility by 5
+                // First, we check if the number is divisible by 5.
                 if (number % 5 == 0) {
+                    // If it is divisible, we need to check how it ends to provide more specific output.
                     if (number % 10 == 0) {
+                        // If the number ends with a 0, we explain that it's divisible by 5 for that reason.
                         System.out.println(number + " is divisible by 5 because it ends with a 0.");
                     } else if (number % 10 == 5) {
+                        // If it ends with a 5, we provide a different explanation.
                         System.out.println(number + " is divisible by 5 because it ends with a 5.");
                     } else {
+                        // If it’s divisible by 5 but doesn't end with 0 or 5, we just mention it's divisible by 5.
+                        System.out.println(number + " is divisible by 5.");
+                    }
+                }
+            } else {
+                // For numbers other than 5, we just check for general divisibility.
+                if (number % i == 0) {
+                    // If the number is divisible by i, we print that out.
+                    System.out.println(number + " is divisible by " + i + ".");
+                }
+            }
+        }
+
+        // closing the scanner.
+        scanner.close();
+    }
+}
+
                         System.out.println(number + " is divisible by 5.");
                     }
                 }
