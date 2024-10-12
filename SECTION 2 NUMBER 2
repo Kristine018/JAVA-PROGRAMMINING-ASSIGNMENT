@@ -4,24 +4,29 @@ import java.util.Scanner;
 
 public class StudentMarks {
     public static void main(String[] args) {
-        // Create a Scanner object for user input
+        // We need a way to read input from the user, so let's create a Scanner object.
         Scanner scanner = new Scanner(System.in);
 
-        // Declare an array to store the marks for 5 units
+        // We'll use an array to store the marks for 5 different units.
         double[] marks = new double[5];
-        double total = 0.0;
+        double total = 0.0;  // This will hold the total of all marks entered.
 
-        // Ask the user to enter the marks for each unit
+        // Now, let's prompt the user to enter the marks for each unit.
         for (int i = 0; i < 5; i++) {
+            // We ask for marks for each unit and store them in the array.
             System.out.print("Enter the marks for unit " + (i + 1) + ": ");
-            marks[i] = scanner.nextDouble();
-            total += marks[i];
+            marks[i] = scanner.nextDouble();  // Read the input and save it in the array.
+            total += marks[i];  // Add the entered marks to the total.
         }
 
-        // Compute the average
-        double average = total / 5;
+        // After gathering all the marks, we calculate the average.
+        double average = total / 5;  // Divide the total by the number of units (5).
 
-        // Display the average rounded to 2 decimal places
+        // Finally, we display the average, formatting it to two decimal places.
         System.out.printf("Your average marks for the five units is: %.2f", average);
+        
+        // clossing scanner.
+        scanner.close();
     }
 }
+
