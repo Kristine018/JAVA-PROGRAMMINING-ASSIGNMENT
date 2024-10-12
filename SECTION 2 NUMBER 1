@@ -1,29 +1,32 @@
-// Import the Scanner class from the java.util package for taking user input
+//This Java program collects a user's surname and current age, then performs two simple computations. It calculates the length of the surname and checks whether the age is even or odd.
+
 import java.util.Scanner;
 
 public class UserInfo {
     public static void main(String[] args) {
+        // We need a way to read input from the user, so let's create a Scanner object.
         Scanner scanner = new Scanner(System.in);
 
-        // Asks for the surname
+        // First, we ask the user to enter their surname.
         System.out.print("Enter your surname: ");
-        String surname = scanner.nextLine();
+        String surname = scanner.nextLine();  // We read the surname input from the user.
 
-        // Asks for the age
+        // Next, we ask the user for their current age.
         System.out.print("Enter your current age: ");
-        int age = scanner.nextInt();
+        int age = scanner.nextInt();  // We read the age input as an integer.
 
-        // Calculates the number of characters in the surname
-        int surnameLength = surname.length();
+        // Now we calculate the number of characters in the surname.
+        int surnameLength = surname.length();  // This gives us the length of the surname.
 
-        // CheckS if the age is even or odd
-        String ageType = (age % 2 == 0) ? "even" : "odd";
+        // Let's determine if the age is even or odd.
+        String ageType = (age % 2 == 0) ? "even" : "odd";  // We use a conditional operator for this.
 
-        // Prints the results
-        System.out.println("The number of characters is " + surnameLength + ".");
-        System.out.println("Your current age is an " + ageType + " number.");
+        // Now, we print the results to the console.
+        System.out.println("The number of characters is " + surnameLength + ".");  // Output the surname length.
+        System.out.println("Your current age is an " + ageType + " number.");  // Output whether the age is even or odd.
 
-        // Closes the scanner
+        //  close the Scanner .
         scanner.close();
     }
 }
+
