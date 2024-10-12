@@ -2,17 +2,22 @@
 
 public class MultiplesFinder {
     public static void main(String[] args) {
-        // Define the range of numbers
-        int start = 71;
-        int end = 150;
+        // First, we need to set the range of numbers we want to check.
+        int start = 71;  // This is the starting number of our range.
+        int end = 150;   // This is the ending number of our range.
 
-        // Display multiples of 2, 3, and 7
+        // Let's inform the user about what we are going to do.
         System.out.println("Multiples of 2, 3, and 7 within the range 71 to 150:");
 
+        // Now we'll loop through each number from start to end.
         for (int i = start; i <= end; i++) {
+            // We want to check if the current number is a multiple of 2, 3, or 7.
+            // A number is a multiple if it divides evenly (remainder 0) by these numbers.
             if (i % 2 == 0 || i % 3 == 0 || i % 7 == 0) {
+                // If it is a multiple, we print the number to the console.
                 System.out.println(i);
             }
         }
     }
 }
+
