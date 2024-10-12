@@ -1,0 +1,60 @@
+//This Java program is a basic calculator that performs addition, subtraction, multiplication, and division based on user input, handling errors like division by zero.
+
+import java.util.Scanner;
+
+public class BasicCalculator {
+    public static void main(String[] args) {
+        // We need a way to get user input, so we'll use a Scanner.
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for the first number they want to calculate with.
+        System.out.print("Enter the first number: ");
+        double firstNumber = scanner.nextDouble();  // Read the first number from user input.
+
+        // Now, we need to know what kind of operation the user wants to perform.
+        System.out.print("Enter an operation (+, -, *, /): ");
+        char operation = scanner.next().charAt(0);  // Read the operation character.
+
+        // Next, ask for the second number to complete the calculation.
+        System.out.print("Enter the second number: ");
+        double secondNumber = scanner.nextDouble();  // Read the second number from user input.
+
+        double result;  // This will store the result of our calculation.
+
+        // Let's figure out which operation to perform based on the user's input.
+        switch (operation) {
+            case '+':
+                // If the user chose addition, we add the two numbers.
+                result = firstNumber + secondNumber;
+                System.out.printf("Result: %.2f + %.2f = %.2f%n", firstNumber, secondNumber, result);
+                break;
+            case '-':
+                // If the user chose subtraction, we subtract the second number from the first.
+                result = firstNumber - secondNumber;
+                System.out.printf("Result: %.2f - %.2f = %.2f%n", firstNumber, secondNumber, result);
+                break;
+            case '*':
+                // If the user chose multiplication, we multiply the two numbers.
+                result = firstNumber * secondNumber;
+                System.out.printf("Result: %.2f * %.2f = %.2f%n", firstNumber, secondNumber, result);
+                break;
+            case '/':
+                // If the user chose division, we need to check if the second number is zero.
+                if (secondNumber != 0) {
+                    // If it's not zero, we can safely perform the division.
+                    result = firstNumber / secondNumber;
+                    System.out.printf("Result: %.2f / %.2f = %.2f%n", firstNumber, secondNumber, result);
+                } else {
+                    // If the second number is zero, we can't divide by zero, so we show an error message.
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+                break;
+            default:
+                // If the user entered an invalid operation, we show an error message.
+                System.out.println("Error: Invalid operation. Please use +, -, *, or /.");
+        }
+
+        // Finally, we close the Scanner to free up resources.
+        scanner.close();
+    }
+}
